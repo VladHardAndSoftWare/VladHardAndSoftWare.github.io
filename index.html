@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Пример веб-страницы</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style type="text/css">
+        @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700';
+
+        body {
+            background: #FFF;
+            font-family: 'Source Sans Pro';
+            font-weight: 400;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            font-weight: normal;
+            text-align: center;
+        }
+
+        h1 sup a {
+            color: #999;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        h1 sup a:hover {
+            color: #666;
+            text-decoration: none;
+        }
+
+        h1 sup a:focus,
+        h1 sup a:active {
+            color: #666;
+            text-decoration: underline;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 30px;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        big {
+            color: #333;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        big pre {
+            display: inline-block;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq-container {
+            text-align: left;
+            margin: 10px auto 30px auto;
+            position: relative;
+        }
+
+        .faq-container article p {
+            margin: 10px 15px 15px 15px;
+        }
+
+        .faq-container input[type=checkbox],
+        .faq-container input[type=radio] {
+            background-color: transparent;
+            border: 1px solid transparent;
+            height: 1px;
+            position: absolute;
+            width: 1px;
+            margin: 4px 0 0 0;
+            outline: none;
+        }
+
+        .faq-container input[type=checkbox]+label,
+        .faq-container input[type=radio]+label {
+            background: #EEEEEE;
+            border-bottom: 1px solid #fff;
+            color: #333;
+            cursor: pointer;
+            display: block;
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 32px;
+            padding: 10px 15px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .faq-container input[type=checkbox]+label:before,
+        .faq-container input[type=radio]+label:before,
+        .faq-container input[type=checkbox]+label:after,
+        .faq-container input[type=radio]+label:after {
+            display: inline-block;
+            font-family: FontAwesome;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+        }
+
+        .faq-container input[type=checkbox]+label:before,
+        .faq-container input[type=radio]+label:before {
+            /* content: "\f29c"; */
+            padding-right: 10px;
+        }
+
+        .faq-container input[type=checkbox]+label:after,
+        .faq-container input[type=radio]+label:after {
+            /* content: "\f054"; */
+            float: right;
+            padding-left: 10px;
+        }
+
+        .faq-container input[type=checkbox]+label:hover,
+        .faq-container input[type=radio]+label:hover {
+            background: #D6D6D6;
+        }
+
+        .faq-container input[type=checkbox]:checked+label,
+        .faq-container input[type=radio]:checked+label {
+            background: #EEEEEE;
+        }
+
+        .faq-container input[type=checkbox]:focus+label,
+        .faq-container input[type=radio]:focus+label {
+            background: #BEBEBE;
+        }
+
+        .faq-container input[type=checkbox]:checked+label:hover,
+        .faq-container input[type=radio]:checked+label:hover {
+            background: #D6D6D6;
+        }
+
+        .faq-container input[type=checkbox]:checked+label:after,
+        .faq-container input[type=radio]:checked+label:after {
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+        }
+
+        .faq-container input[type=checkbox]+label+article,
+        .faq-container input[type=radio]+label+article {
+            display: none;
+            /* display: none; - Content is ignored by screen readers, additionally stops tabbing through hidden content */
+            height: 0;
+            max-height: 0;
+            overflow: hidden;
+            /* 0, 0, hidden; - Content is ignored by screen readers, but tab key still steps through hidden elements */
+            -webkit-transition: all 1.5s ease-in-out;
+            -moz-transition: all 1.5s ease-in-out;
+            -o-transition: all 1.5s ease-in-out;
+            -ms-transition: all 1.5s ease-in-out;
+            transition: all 1.5s ease-in-out;
+        }
+
+        .faq-container input[type=checkbox]:checked+label+article,
+        .faq-container input[type=radio]:checked+label+article {
+            display: block;
+            height: auto;
+            max-height: 2000px;
+            -webkit-transition: all 1.5s ease-in-out;
+            -moz-transition: all 1.5s ease-in-out;
+            -o-transition: all 1.5s ease-in-out;
+            -ms-transition: all 1.5s ease-in-out;
+            transition: all 1.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-4 fw-normal">Васильев Владилсав Игоревич</h1>
+            <p class="lead fw-normal"></p>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h2>Checkbox based accordion</h2>
+        <big><em>Multiple collapsible sections can be open at any given time. Use the
+                <pre>TAB</pre> key to focus on the group and navigate through the section labels,
+                <pre>SHIFT+TAB</pre> can be used to navigate backwards. Pressing
+                <pre>SPACE</pre> on an active section will toggle the article visibility.</em></big>
+
+        <section class="faq-container">
+
+            <input id="faq2a" name="faq2" type="checkbox" checked="checked">
+            <label for="faq2a"><h3>Образование</h3></label>
+            <article>
+                <p><strong>Школа:</strong> Гимназия №3</p>
+                <p><strong>Бакалавриат:</strong> 09.03.01 Информационные системы и технологии Северный (Арктический
+                    федеральный университет)</p>
+            </article>
+
+            <input id="faq2b" name="faq2" type="checkbox">
+            <label for="faq2b"><h3>Проекты</h3></label>
+            <article>
+                <ul>
+                    <li>
+                        <p><strong><a href="">Обучение школьников программированию</a></strong></p>
+                    </li>
+                    <li>
+                        <p><strong><a
+                                    href="https://play.google.com/store/apps/dev?id=5804151805966242972&hl=ru&gl=US">Моя
+                                    страница разаботчика Android</a></strong></p>
+                    </li>
+                </ul>
+            </article>
+
+            <input id="faq2c" name="faq2" type="checkbox">
+            <label for="faq2c"><h3>Языки программирования</h3></label>
+            <article>
+                <ul>
+                    <li>C#</li>
+                    <li>Java script</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>1C</li>
+                    <li>F#</li>
+                    <li>C++</li>
+                    <li>Assembler</li>
+                    <li>Pascal</li>
+                </ul>
+            </article>
+
+            <input id="faq2d" name="faq2" type="checkbox">
+            <label for="faq2d"><h3>Навыки</h3></label>
+            <article>
+                <ul>
+                    <li>Знание Git</li>
+                </ul>
+            </article>
+
+            <input id="faq2f" name="faq2" type="checkbox">
+            <label for="faq2f"><h3>Языковые сертификаты</h3></label>
+            <article>
+
+            </article>
+        </section>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
+
+
+
+
+<!-- <div class="container">
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle1" checked="checked">
+            <h2 class="handle">
+                <label for="handle1">Образование</label>
+            </h2>
+            <div class="content">
+                <p><strong>Школа:</strong> Гимназия №3</p>
+                <p><strong>Бакалавриат:</strong> 09.03.01 Информационные системы и технологии Северный (Арктический
+                    федеральный университет)</p>
+            </div>
+        </section>
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle2">
+            <h2 class="handle">
+                <label for="handle2">Проекты</label>
+            </h2>
+            <div class="content">
+                <ul>
+                    <li><p><strong><a href = "">Обучение школьников программированию</a></strong></p></li>
+                    <li><p><strong><a href = "https://play.google.com/store/apps/dev?id=5804151805966242972&hl=ru&gl=US">Моя страница разаботчика Android</a></strong></p></li>
+                </ul>
+            </div>
+        </section>
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle3">
+            <h2 class="handle">
+                <label for="handle3">Языки программирования</label>
+            </h2>
+            <div class="content">
+                <ul>
+                    <li>C#</li>
+                    <li>Java script</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>1C</li>
+                    <li>F#</li>
+                    <li>C++</li>
+                    <li>Assembler</li>
+                    <li>Pascal</li>
+                </ul>
+            </div>
+        </section>
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle4">
+            <h2 class="handle">
+                <label for="handle4">Навыки</label>
+            </h2>
+            <div class="content">
+                <ul>
+                    <li>Знание Git</li>
+                </ul>
+            </div>
+        </section>
+        <section class="accordion">
+            <input type="checkbox" name="collapse" id="handle5">
+            <h2 class="handle">
+                <label for="handle5">Языковые сертификаты</label>
+            </h2>
+            <div class="content">
+
+            </div>
+        </section> -->
