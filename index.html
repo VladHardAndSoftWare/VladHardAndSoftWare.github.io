@@ -329,26 +329,10 @@
             </div>
         </div>
 
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5">
-              <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">Album example</h1>
-                <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-                <p>
-                  <a href="#" class="btn btn-primary my-2">Main call to action</a>
-                  <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-                </p>
-              </div>
-            </div>
-          </section>
 
-        <div class="alert alert-secondary" role="alert" data-bs-toggle="collapse" href="#multiCollapseExample1"
-            role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-            This is a secondary alert—check it out!
-        </div>
         <div class="container">
-
-            <p>Резюме Васильева Владислава Игоревича</p>
+            <br>
+            <h3 align="center"><b>Резюме Васильева Владислава Игоревича</b></h3>
             <section class="faq-container">
 
                 <input id="faq2a" name="faq2" type="checkbox" checked="checked" data-bs-toggle="collapse"
@@ -417,10 +401,37 @@
                 <input id="faq2d" name="faq2" type="checkbox" data-bs-toggle="collapse" href="#multiCollapseExample4"
                     role="button" aria-expanded="false" aria-controls="multiCollapseExample4">
                 <label for="faq2d">
-                    <h3>Навыки</h3>
+                    <h3>Награды</h3>
                 </label>
                 <div class="col">
                     <div class="collapse multi-collapse" id="multiCollapseExample4">
+                        <div class="card card-body">
+                            <img id="myImg" src="img/GermanyIntership.png" width="40%" onclick="ImgClick(1)">
+                            <div id="myModal1" class="modal" onclick="Modal()">
+                                <img class="modal-content" id="img1" src="img/GermanyIntership.png">
+                            </div>
+                            <p align="center">Трёхмесячная стажировка в Германии</p>
+                            <img id="myImg" src="img/IdeaToProject.png" width="40%" onclick="ImgClick(2)">
+                            <div id="myModal2" class="modal" onclick="Modal()">
+                                <img class="modal-content" id="img2" src="img/IdeaToProject.png">
+                            </div>
+                            <p align="center">Участие в проекте с Норвежским университетом LuLeo</p>
+                            <img id="myImg" src="img/ITPlanet.png" width="40%" onclick="ImgClick(3)">
+                            <div id="myModal3" class="modal" onclick="Modal()">
+                                <img class="modal-content" id="img3" src="img/ITPlanet.png">
+                            </div>
+                            <p align="center">Победа в олимпиаде в секции создания мобильных приложений по Северо-Западному региону</p>
+                        </div>
+                    </div>
+                </div>
+
+                <input id="faq2e" name="faq2" type="checkbox" data-bs-toggle="collapse" href="#multiCollapseExample5"
+                    role="button" aria-expanded="false" aria-controls="multiCollapseExample5">
+                <label for="faq2e">
+                    <h3>Навыки</h3>
+                </label>
+                <div class="col">
+                    <div class="collapse multi-collapse" id="multiCollapseExample5">
                         <div class="card card-body">
                             <ul>
                                 <li>Знание Git</li>
@@ -429,17 +440,17 @@
                     </div>
                 </div>
 
-                <input id="faq2f" name="faq2" type="checkbox" data-bs-toggle="collapse" href="#multiCollapseExample5"
-                    role="button" aria-expanded="false" aria-controls="multiCollapseExample5">
+                <input id="faq2f" name="faq2" type="checkbox" data-bs-toggle="collapse" href="#multiCollapseExample6"
+                    role="button" aria-expanded="false" aria-controls="multiCollapseExample6">
                 <label for="faq2f">
                     <h3>Языковые сертификаты</h3>
                 </label>
                 <div class="col">
-                    <div class="collapse multi-collapse" id="multiCollapseExample5">
+                    <div class="collapse multi-collapse" id="multiCollapseExample6">
                         <div class="card card-body">
-                            <img id="myImg" src="img/IELTS.png" width="80%">
-                            <div id="myModal" class="modal">
-                                <img class="modal-content" id="img01">
+                            <img id="myImg" src="img/IELTS.png" width="40%" onclick="ImgClick(4)">
+                            <div id="myModal4" class="modal" onclick="Modal()">
+                                <img class="modal-content" id="img4" src="img/IELTS.png">
                             </div>
                         </div>
                     </div>
@@ -453,29 +464,39 @@
     </script>
     <script>
         // Get the modal
-        var modal = document.getElementById('myModal');
+        var modal
+        var ImgElemGlobal = "null";
 
         // Get the image and insert it inside the modal - use its "alt" text as a caption
-        var img = document.getElementById('myImg');
-        var modalImg = document.getElementById("img01");
-        var captionText = document.getElementById("caption");
-        img.onclick = function () {
+        // var img = document.getElementById('myImg');
+        // var modalImg = document.getElementById("img01");
+        // var captionText = document.getElementById("caption");
+        // img.onclick = function (ImgElement) {
+        function ImgClick(ImgElement){
+            modal = document.getElementById('myModal' + ImgElement);
+            var img = document.getElementById("myImg" + ImgElement);
+            var modalImg = document.getElementById("img" + ImgElement);
+            var captionText = document.getElementById("caption" + ImgElement);
             modal.style.display = "block";
-            modalImg.src = this.src;
+            // modalImg.src = this.src;
             modalImg.alt = this.alt;
-            captionText.innerHTML = this.alt;
+            ImgElemGlobal = ImgElement;
+            // captionText.innerHTML = this.alt;
         }
+
 
 
         // When the user clicks on <span> (x), close the modal
-        modal.onclick = function () {
-            img01.className += " out";
+        // modal.onclick = function () {
+        function Modal(){
+            ImgElemGlobal.className += " out";
             setTimeout(function () {
                 modal.style.display = "none";
-                img01.className = "modal-content";
+                ImgElemGlobal.className = "modal-content";
             }, 400);
 
         }
+
     </script>
 
 </body>
