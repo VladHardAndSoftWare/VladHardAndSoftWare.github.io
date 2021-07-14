@@ -6,8 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Диплом</title>
     <link rel="icon" href="/img/cv.svg" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="css.css" rel="stylesheet">
 </head>
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a type="button" class="btn btn-outline-secondary" href="index.html"> &#8592 Вернуться на главную</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <h1 class="mt-5"></h1>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">     
+                <img id="myImg" src="img/university/img231.jpg" width="70%" onclick="ImgClick(1)">
+                <div id="myModal1" class="modal" onclick="Modal()">
+                    <img class="modal-content" id="img1" src="img/university/img231.jpg">
+                </div>
+            </div>
+            <div class="col">
+                <img id="myImg" src="img/university/img232.jpg" width="70%" onclick="ImgClick(2)">
+                <div id="myModal2" class="modal" onclick="Modal()">
+                    <img class="modal-content" id="img2" src="img/university/img232.jpg">
+                </div>
+            </div>
+            <div class="col">
+                <img id="myImg" src="img/university/img233.jpg" width="70%" onclick="ImgClick(3)">
+                <div id="myModal3" class="modal" onclick="Modal()">
+                    <img class="modal-content" id="img3" src="img/university/img233.jpg">
+                </div>
+            </div>
+            <div class="col">
+                <img id="myImg" src="img/university/img234.jpg" width="70%" onclick="ImgClick(4)">
+                <div id="myModal4" class="modal" onclick="Modal()">
+                    <img class="modal-content" id="img4" src="img/university/img234.jpg">
+                </div>
+            </div>
+            <div class="col">
+                    <img id="myImg" src="img/university/img235.jpg" width="70%" onclick="ImgClick(5)">
+                    <div id="myModal5" class="modal" onclick="Modal()">
+                        <img class="modal-content" id="img5" src="img/university/img235.jpg">
+                    </div>
+              </div>
+          </div>
+    </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+</script>
+<script src="js.js">
+</script>
 </html>
